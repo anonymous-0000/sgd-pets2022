@@ -1,0 +1,24 @@
+---
+data:
+    name: mnist
+    binary: false
+    flatten: false
+model:
+    architecture: cnn
+    task_type: classification
+    input_size: !!python/tuple [28, 28]
+    output_size: 10
+    hidden_size: 10     # not sure this makes sense for cnn
+training:
+    n_epochs: 20
+    batch_size: 32
+    optimization_algorithm:
+        name: SGD
+        learning_rate: 0.1
+logging:
+    cadence: 100
+    save_weights: true
+    save_gradients: true
+    sample_minibatch_gradients: false
+    n_gradients: 0
+...
